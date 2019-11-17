@@ -24,7 +24,8 @@ def contact(request):
     contact_form = ContactForm(request.POST or None)
     context = {
         "contact":"contact page",
-        "form":contact_form
+        "form":contact_form,
+        "brand":"new brand"
     }
     
     if contact_form.is_valid():
@@ -35,7 +36,7 @@ def contact(request):
     #     print(request.POST.get("password"))
     #     print(request.POST.get("content"))
 
-    return render(request, 'contact.html',context)
+    return render(request, 'contact/view.html',context)
 
 
 def loginuser(request):
